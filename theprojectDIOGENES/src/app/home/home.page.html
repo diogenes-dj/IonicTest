@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="content">
+    <ion-title>
+      Delícias da Sel
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content" [fullscreen]="true">
+  <ion-list>
+    <ion-item  class="list" *ngFor="let catitens of listitens" [routerLink]="catitens.pagina">
+      <ion-thumbnail slot="end">
+        <img id="teste" [src]="catitens.foto">
+      </ion-thumbnail>
+   <ion-label id="produtos" position="undefined">
+     <h2>{{catitens.nome}}</h2>
+   </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

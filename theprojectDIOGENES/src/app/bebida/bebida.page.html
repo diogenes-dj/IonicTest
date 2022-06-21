@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Aqui você escolhe a sua bebida favorita!</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let home of bebi" [routerLink]="home.pagina" [queryParams]="{imagem: home.foto, nome: home.nome, preco2: home.preco, descricao: home.descricao}" >
+      <ion-thumbnail slot="end">
+        <img id="imagem" [src]="home.foto">
+      </ion-thumbnail>
+   <ion-label id="produtos" position="undefined">
+     <h2>{{home.nome}}</h2>
+     <p>R$: {{home.preco}}</p>
+     <!-- <p>{{home.descricao}}</p> -->
+   </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-button class="botao" (click)="navegar()" color="secondary">Voltar</ion-button>
+</ion-content>

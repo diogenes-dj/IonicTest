@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Promoção de Hoje!!!</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let promoc of promo" [routerLink]="promoc.pagina" [queryParams]="{imagem: promoc.foto, nome: promoc.nome, preco2: promoc.preco, descricao: promoc.descricao}" >
+      <ion-thumbnail slot="end">
+        <img id="imagem" [src]="promoc.foto">
+      </ion-thumbnail>
+   <ion-label id="produtos" position="undefined">
+     <h2>{{promoc.nome}}</h2>
+     <p>R$: {{promoc.preco}}</p>
+   </ion-label>
+    </ion-item>
+  </ion-list>
+  <h2>De: R$50,00 por R$44,99</h2>
+  <ion-button class="botao" (click)="navegar()" color="secondary">Voltar</ion-button>
+</ion-content>
